@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | ALE NAIL DESIGNER</title>
+    <link rel="stylesheet" href="/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Seção de Login -->
+    <div id="login-section" class="login-wrapper">
+        <div class="login-card">
+            <h2>✨ ALE NAIL DESIGNER</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" required placeholder="Digite seu usuário">
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn-submit">Entrar no Painel 💅</button>
+            </form>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">Padrão inicial: ale / admin123</p>
+        </div>
+    </div>
+
+    <!-- Seção Principal do Painel -->
+    <div id="panel-section" class="admin-container hidden">
+        <aside class="admin-sidebar">
+            <h2>💅 Painel Ale</h2>
+            <ul class="admin-nav">
+                <li><button class="active">Gerenciar Galeria</button></li>
+                <li><a href="/" style="text-decoration: none; display: block; padding: 10px 15px; color: #4a3b32; font-weight: 500;">Ver Site Principal ↗</a></li>
+            </ul>
+        </aside>
+
+        <main class="admin-content">
+            <div class="admin-header">
+                <h1>Gerenciamento de Fotos da Galeria 🌸</h1>
+            </div>
+
+            <div class="card-box">
+                <h3 style="margin-bottom: 20px;">Adicionar Nova Foto</h3>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Título / Descrição da Unha</label>
+                        <input type="text" id="title" name="title" placeholder="Ex: Alongamento Nude com Glitter">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Selecionar Imagem (JPG, PNG)</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn-submit" style="width: auto; padding: 10px 25px;">Enviar para Galeria 📸</button>
+                </form>
+            </div>
+
+            <div class="card-box">
+                <h3 style="margin-bottom: 20px;">Fotos Cadastradas</h3>
+                <div id="admin-gallery-list">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/admin.js"></script>
+</body>
+</html>
