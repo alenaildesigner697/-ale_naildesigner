@@ -1,0 +1,23 @@
+{
+"name": "ale-nail-designer",
+"version": "1.0.0",
+"description": "Site profissional para Nail Designer com Painel Administrativo",
+"main": "server.js",
+"scripts": {
+"start": "node server.js"
+},
+"keywords": [
+"nail-designer",
+"beauty",
+"express"
+],
+"author": "Ale",
+"license": "MIT",
+"dependencies": {
+"cors": "^2.8.5",
+"dotenv": "^16.4.5",
+"express": "^4.19.2",
+"multer": "^1.4.5-lts.1",
+"sqlite3": "^5.1.7"
+}
+}
