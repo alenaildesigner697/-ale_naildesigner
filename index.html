@@ -363,7 +363,7 @@
                 <form id="login-form" onsubmit="handleAdminLogin(event)" class="space-y-4">
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-600 mb-2">Senha de Acesso</label>
-                        <input type="password" id="admin-password" placeholder="Digite a senha (ale_naildesigner)" required class="w-full px-4 py-3 rounded-2xl border border-pink-200 focus:ring-2 focus:ring-pinkAccent focus:outline-none text-sm bg-pink-50/30">
+                        <input type="password" id="admin-password" placeholder="Digite a senha..." required class="w-full px-4 py-3 rounded-2xl border border-pink-200 focus:ring-2 focus:ring-pinkAccent focus:outline-none text-sm bg-pink-50/30">
                     </div>
                     <div id="login-error" class="text-red-500 text-xs hidden text-center font-medium">Senha incorreta. Tente novamente.</div>
                     <button type="submit" class="w-full py-3.5 rounded-full bg-pinkAccent text-white font-semibold text-sm shadow-md hover:opacity-95 transition">
@@ -851,7 +851,10 @@
 
         async function saveAllData() {
             const user = auth.currentUser;
-            if (!user) return; // RULE 3: Auth before operations
+            if (!user) {
+                console.error("User not authenticated yet.");
+                return; // RULE 3: Auth before operations
+            }
 
             try {
                 const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'store_data');
@@ -862,6 +865,7 @@
                     appointments: siteAppointments,
                     updatedAt: new Date().toISOString()
                 });
+                console.log("Data successfully saved to Firestore!");
             } catch (err) {
                 console.error("Error saving data to Firestore:", err);
             }
@@ -1271,6 +1275,15 @@
             }
 
             saveAllData();
+            alertCustom("Configurações salvas com sucesso! ✨");
+        }
+
+        window.alertCustom = function(msg) {
+            const div = document.createElement('div');
+            div.className = "fixed top-6 right-6 z-50 bg-pinkAccent text-white px-6 py-3 rounded-2xl shadow-xl font-medium text-sm animate-bounce";
+            div.innerText = msg;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 3000);
         }
 
         // Initialize Firebase on window load
