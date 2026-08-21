@@ -1,0 +1,156 @@
+:root {
+--pink-pastel: #ffd1dc;
+--pink-light: #fff5f7;
+--rose-gold: #c59b76;
+--dark-text: #4a3b32;
+--white: #ffffff;
+--gray-bg: #faf7f5;
+}
+
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: var(--pink-light);
+color: var(--dark-text);
+min-height: 100vh;
+}
+
+.login-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+padding: 20px;
+}
+
+.login-card {
+background: var(--white);
+padding: 40px;
+border-radius: 25px;
+box-shadow: 0 10px 30px rgba(197,155,118,0.15);
+width: 100%;
+max-width: 400px;
+text-align: center;
+border: 2px solid var(--pink-pastel);
+}
+
+.login-card h2 {
+margin-bottom: 25px;
+color: var(--dark-text);
+}
+
+.form-group {
+margin-bottom: 20px;
+text-align: left;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-size: 0.9rem;
+font-weight: 500;
+}
+
+.form-group input {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid #e2d4cf;
+border-radius: 12px;
+outline: none;
+font-size: 0.95rem;
+transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+border-color: var(--rose-gold);
+}
+
+.btn-submit {
+width: 100%;
+background: linear-gradient(135deg, var(--pink-pastel), var(--rose-gold));
+color: white;
+padding: 12px;
+border: none;
+border-radius: 12px;
+font-weight: 600;
+cursor: pointer;
+font-size: 1rem;
+transition: opacity 0.2s;
+}
+
+.btn-submit:hover {
+opacity: 0.9;
+}
+
+/* Painel Principal */
+.admin-container {
+display: grid;
+grid-template-columns: 250px 1fr;
+min-height: 100vh;
+}
+
+.admin-sidebar {
+background-color: var(--white);
+padding: 30px 20px;
+border-right: 1px solid #eee;
+}
+
+.admin-sidebar h2 {
+font-size: 1.2rem;
+margin-bottom: 30px;
+color: var(--dark-text);
+}
+
+.admin-nav {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.admin-nav button {
+background: none;
+border: none;
+text-align: left;
+font-size: 1rem;
+font-weight: 500;
+color: var(--dark-text);
+cursor: pointer;
+padding: 10px 15px;
+border-radius: 10px;
+width: 100%;
+transition: background 0.3s;
+}
+
+.admin-nav button.active, .admin-nav button:hover {
+background-color: var(--pink-baby);
+color: var(--rose-gold);
+}
+
+.admin-content {
+padding: 40px;
+}
+
+.admin-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 30px;
+}
+
+.card-box {
+background: var(--white);
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+margin-bottom: 30px;
+}
+
+.hidden {
+display: none !important;
+}
